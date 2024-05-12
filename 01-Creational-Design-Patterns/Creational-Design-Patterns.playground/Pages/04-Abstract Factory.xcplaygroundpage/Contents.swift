@@ -88,7 +88,7 @@ class MexicanDessert: Dessert {
   }
 }
 
-class FoodDeliveryApp {
+class FoodDelivery {
   private let restaurantFactory: RestaurantFactory
 
   init(restaurantFactory: RestaurantFactory) {
@@ -115,11 +115,11 @@ class FoodDeliveryApp {
 let italianRestaurantFactory = ItalianRestaurantFactory()
 let mexicanRestaurantFactory = MexicanRestaurantFactory()
 
-// Create instances of FoodDeliveryApp using the desired factories
-let italianApp = FoodDeliveryApp(restaurantFactory: italianRestaurantFactory)
-let mexicanApp = FoodDeliveryApp(restaurantFactory: mexicanRestaurantFactory)
+// Create instances of FoodDelivery using the desired factories
+let italianFoodDelivery = FoodDelivery(restaurantFactory: italianRestaurantFactory)
+let mexicanFoodDelivery = FoodDelivery(restaurantFactory: mexicanRestaurantFactory)
 
-// Display menus using the respective app instances
-italianApp.displayMenu()
-mexicanApp.displayMenu()
+// Display menus using the respective instances
+italianFoodDelivery.displayMenu()
+mexicanFoodDelivery.displayMenu()
 

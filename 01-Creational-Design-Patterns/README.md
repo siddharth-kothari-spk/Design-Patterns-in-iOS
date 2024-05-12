@@ -466,7 +466,7 @@ class MexicanDessert: Dessert {
 - In the client code, we can utilize the abstract factory and its products to create and display menu items without knowing the specific restaurant or its menu items:
 
 ```swift
-class FoodDeliveryApp {
+class FoodDelivery {
   private let restaurantFactory: RestaurantFactory
 
   init(restaurantFactory: RestaurantFactory) {
@@ -493,15 +493,17 @@ class FoodDeliveryApp {
 - Now, when we run the app and select a specific restaurant, we can create and display the menu items using the abstract factory:
 
 ```swift
-let app = FoodDeliveryApp()
+// Create instances of concrete factories
+let italianRestaurantFactory = ItalianRestaurantFactory()
+let mexicanRestaurantFactory = MexicanRestaurantFactory()
 
-// Select Italian restaurant
-app.restaurantFactory = ItalianRestaurantFactory()
-app.displayMenu()
+// Create instances of FoodDelivery using the desired factories
+let italianFoodDelivery = FoodDelivery(restaurantFactory: italianRestaurantFactory)
+let mexicanFoodDelivery = FoodDelivery(restaurantFactory: mexicanRestaurantFactory)
 
-// Select Mexican restaurant
-app.restaurantFactory = MexicanRestaurantFactory()
-app.displayMenu()
+// Display menus using the respective instances
+italianFoodDelivery.displayMenu()
+mexicanFoodDelivery.displayMenu()
 ```
 
 - Output:
